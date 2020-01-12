@@ -7,6 +7,16 @@
 #include <iomanip>
 
 VMatrix::Matrix::Matrix(VMatrix::MatrixVector& hopefulMatrixShape, int rows, int columns) {
+    if (rows != hopefulMatrixShape.size()) {
+        throw "Incorrect row size passed in.";
+    }
+    
+    for (int r = 0; r < rows; r++) {
+        if (columns != hopefulMatrixShape[r].size()) {
+            throw "Incorrect column size passed in.";
+        }
+    }
+
     this->colCount = columns;
     this->rowCount = rows;
     this->matrix   = hopefulMatrixShape;
