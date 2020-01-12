@@ -1,5 +1,7 @@
 # VMatrix
-Vector implemented Matrix in C++
+My own Vector implemented Matrix in C++.
+
+This repo is just for learning purposes only and I have no intention on this being a real thing. Feel free to contribute or fork if you are also learning.
 
 Example below is some output of matrices and having them added/subtracted and multiplied.
 ```
