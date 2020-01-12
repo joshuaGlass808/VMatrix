@@ -10,7 +10,7 @@ VMatrix::Matrix::Matrix(VMatrix::MatrixVector& hopefulMatrixShape, int rows, int
     if (rows != hopefulMatrixShape.size()) {
         throw "Incorrect row size passed in.";
     }
-    
+
     for (int r = 0; r < rows; r++) {
         if (columns != hopefulMatrixShape[r].size()) {
             throw "Incorrect column size passed in.";
@@ -131,11 +131,14 @@ namespace VMatrix {
 
         // Now we have validated our matrix sizes, we are ready to multiply.
         VMatrix::MatrixVector mulMatrix;
-        int multiplier;
+        for (int i = 0; i < m1.rowCount; i++) {
+            mulMatrix.push_back(std::vector<int>(m2.colCount));
+        }
 
+        int multiplier;
         for (int col = 0; col < m2.colCount; col++) {
             for (int r = 0; r < m1.rowCount; r++) {
-                mulMatrix.push_back(std::vector<int>(m1.colCount));
+                //mulMatrix.push_back(std::vector<int>(m1.colCount));
                 multiplier = 0;
                 for (int c = 0; c < m1.colCount; c++) {
                     multiplier += (m1.matrix[r][c] * m2.matrix[c][col]);       

@@ -8,7 +8,7 @@ namespace VMatrix {
 
     class Matrix {
 
-        unsigned int colCount, rowCount;
+        int colCount, rowCount;
         MatrixVector matrix;
 
     public:
